@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Prompt</title>
+    <style>
+        body{
+            background-color: black;
+            font-size: 200px;
+        }
+       
+        @font-face{
+            font-family: Greenscr;
+            src: url('Greenscr.ttf') format('truetype');
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:90vh;
+        }
+         .container .s{
+            position: relative;
+            text-transform: capitalize;
+            font-family: Greenscr;
+            color:transparent;
+        }
+        .container .s::before{
+            content:"hello..";
+            position: absolute;
+            top:0;
+            left:0;
+            width:0;
+            text-transform: capitalize;
+            color: green;
+            overflow: hidden;
+            animation-name: fill-text;
+            animation-duration: 1.5s;
+            animation-delay: 2s;
+            /* animation-iteration-count: infinite; */
+            animation-fill-mode: forwards;
+            
+        }
+        .container .s span{
+            position: absolute;
+            width:20px;
+            height: 100%;
+            background-color: green;
+            top:0;
+            left:0;
+            animation-name: change-pos;
+            animation-duration: 1.5s;
+            animation-delay: 2s;
+            /* animation-iteration-count: infinite; */
+            z-index: 1;
+            animation-fill-mode: forwards;
+        }
+        
+       @keyframes fill-text{
+        0%{
+              width:0%;
+           }
+           10%{
+            width:20%;
+           }
+           20%{
+            width:40%;
+           }
+           30%{
+            width:60%;
+           }
+           40%{
+            width:80%;
+           }
+           50%{
+            width:100%;
+           }
+           60%{
+            width:80%;
+           }
+           70%{
+            width:60%;
+           }
+           80%{
+            width:40%;
+           }
+           90%{
+            width:20%;
+           }
+           100%{   
+            width:0%;
+            visibility: hidden;
+           }
+       }
+     
+       
+       @keyframes change-pos{
+           0%{
+               left: 0;
+               opacity: 1;
+           }
+           10%{
+               left:20%;
+               opacity: 0;
+           }
+           20%{
+               left:40%;
+               opacity: 1;
+           }
+           30%{
+               left:60%;
+               opacity: 0;
+           }
+           40%{
+               left:80%;
+               opacity: 1;
+           }
+           50%{
+               left:100%;
+               opacity: 1;
+           }
+           60%{
+               left:80%;
+               opacity: 0;
+           }
+           70%{
+               left:60%;
+               opacity: 1;
+           }
+           80%{
+               left:40%;
+               opacity: 0;
+           }
+           90%{
+               left:20%;
+               opacity: 0;
+           }
+           100%{              
+               left: 0%;
+               opacity: 0;
+           }
+       }
+       .container .css{
+            position: absolute;
+            text-transform: capitalize;
+            font-family: Greenscr;
+            
+            color:transparent;
+        }
+        .container .css::before{
+            content:"css";
+            position: absolute;
+            top:0;
+            left:0;
+            width:0;
+            text-transform: capitalize;
+            color: green;
+            overflow: hidden;
+            animation-name: fill-text;
+            animation-duration: 1.5s;
+            animation-delay: 3.5s;
+            /* animation-iteration-count: infinite; */
+            animation-fill-mode: forwards;
+            
+        }
+        .container .css span{
+            position: absolute;
+            width:20px;
+            height: 100%;
+            background-color: green;
+            top:0;
+            left:0;
+            animation-name: change-pos;
+            animation-duration: 1.5s;
+            animation-delay: 3.5s;
+            z-index: 1;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+       
+       .container .is{
+            position: absolute;
+            text-transform: capitalize;
+            font-family: Greenscr;
+            color:transparent;
+        }
+        .container .is::before{
+            content:"is";
+            position: absolute;
+            top:0;
+            left:0;
+            width:0;
+            text-transform: capitalize;
+            color: green;
+            overflow: hidden;
+            animation-name: fill-text;
+            animation-duration: 1.5s;
+            animation-delay: 5s;
+            /* animation-iteration-count: infinite; */
+            animation-fill-mode: forwards;
+            
+        }
+        .container .is span{
+            position: absolute;
+            width:20px;
+            height: 100%;
+            background-color: green;
+            top:0;
+            left:0;
+            animation-name: change-pos;
+            animation-duration: 1.5s;
+            animation-delay: 5s;
+            z-index: 1;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+       .container .typing{
+            position: absolute;
+            text-transform: capitalize;
+            font-family: Greenscr;
+            color:transparent;
+        }
+        .container .typing::before{
+            content:"typing..";
+            position: absolute;
+            top:0;
+            left:0;
+            width:0;
+            text-transform: capitalize;
+            color: green;
+            overflow: hidden;
+            animation-name: fill-text;
+            animation-duration: 1.5s;
+            animation-delay: 6.5s;
+            /* animation-iteration-count: infinite; */
+            animation-fill-mode: forwards;
+            
+        }
+        .container .typing span{
+            position: absolute;
+            width:20px;
+            height: 100%;
+            background-color: green;
+            top:0;
+            left:0;
+            animation-name: change-pos;
+            animation-duration: 1.5s;
+            animation-delay: 6.5s;
+            z-index: 1;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+       
+        
+      
+      
+       @media(max-width:1200px){
+        body{
+               font-size: 100px;
+           }
+       }
+       @media(max-width:600px){
+           body{
+               font-size: 60px;
+           }
+       }
+       
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <audio controls="none">
+            <source src="typing.wav" >
+          </audio> -->
+        <p class="s">hello..
+            <span></span>
+        <p>
+        <p class="css">css
+            <span></span>
+        <p>
+        <p class="is">is
+            <span></span>
+        <p>
+        <p class="typing">typing..
+            <span></span>
+        <p>
+        <!-- <p class="k">kale
+            <span></span>
+        <p> -->
+        
+    </div>
+</body>
+</html>
